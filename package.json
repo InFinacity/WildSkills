@@ -1,5 +1,6 @@
 {
   "name": "wildskillsfrontend",
+  "homepage": "https://infinacity.github.io/WildSkills/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy":"npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -20,6 +23,7 @@
     "@stomp/stompjs": "^7.0.0",
     "axios": "^1.7.7",
     "date-fns": "^4.1.0",
+    "gh-pages": "^6.3.0",
     "react": "^18.3.1",
     "react-date-picker": "^11.0.0",
     "react-dom": "^18.3.1",
@@ -36,7 +40,7 @@
     "@eslint/js": "^9.13.0",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.3",
+    "@vitejs/plugin-react": "^4.3.4",
     "buffer": "^6.0.3",
     "eslint": "^9.13.0",
     "eslint-plugin-react": "^7.37.1",

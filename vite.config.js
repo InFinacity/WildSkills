@@ -7,6 +7,7 @@ import rollupNodePolyFill from 'rollup-plugin-node-polyfills';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: "/WildSkills",
   optimizeDeps: {
     esbuildOptions: {
       define: {
