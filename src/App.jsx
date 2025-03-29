@@ -102,7 +102,7 @@ const App = () => {
                         console.log('test');
                         updateAuthentication(true);
                     } else {
-                        updateAuthentication(false);
+                        updateAuthentication(true);
                         setTimeout(() => {
                             logoutHandle();
                         }, 100);
