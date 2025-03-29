@@ -54,7 +54,7 @@ const App = () => {
     const defaultVal = 'blank';
 
 
-
+    /*
     useEffect(() => {
         localStorage.setItem('authId', authId);
         localStorage.setItem('userId', userId);
@@ -85,7 +85,7 @@ const App = () => {
 
     }
 
-    /*
+    
     useEffect(() => {
         const checkAuth = async (authId) => {
             if (authId !== 'blank') {
