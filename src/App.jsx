@@ -125,7 +125,7 @@ const App = () => {
     }, [authId]);
 
     const apiAuth = axios.create({
-        baseURL: 'http://localhost:8080/api/wildSkills/authentication',
+        baseURL: 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/authentication',
         timeout: 1000,
         headers: {
             'Content-Type': 'application/json',

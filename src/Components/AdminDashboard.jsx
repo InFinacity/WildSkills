@@ -17,7 +17,7 @@ const Dashboard = () => {
     useEffect(() => {
         const searchRecent = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/wildSkills/skilloffering/searchRecent');
+                const response = await axios.get('https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/skilloffering/searchRecent');
                 console.log("skill offerings:" + response.data);
                 setRecentSkillOfferings(response.data);
                 console.log(recentSkillOfferings)
@@ -29,7 +29,7 @@ const Dashboard = () => {
 
         const searchRecentExchanges = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/wildSkills/skillExchange/getRecentExchanges');
+                const response = await axios.get('https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/skillExchange/getRecentExchanges');
                 console.log("skill exchanges:" + response.data);
                 setRecentSkillExchanges(response.data);
             } catch (error) {
@@ -40,7 +40,7 @@ const Dashboard = () => {
 
         const countAllOffering = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/wildSkills/skilloffering/countAllOfferings');
+                const response = await axios.get('https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/skilloffering/countAllOfferings');
                 console.log("offering count: " + response.data);
                 setOfferingCount(response.data);
             } catch (error) {
@@ -51,7 +51,7 @@ const Dashboard = () => {
 
         const countAllExchange = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/wildSkills/skillExchange/countAllExchange');
+                const response = await axios.get('https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/skillExchange/countAllExchange');
                 console.log("exchange count: " + response.data);
                 setExchangeCount(response.data);
             } catch (error) {
@@ -62,7 +62,7 @@ const Dashboard = () => {
 
         const countAllStudent = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/wildSkills/student/countTotalUsers');
+                const response = await axios.get('https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/student/countTotalUsers');
                 console.log("student count: " + response.data);
                 setStudentCount(response.data);
             } catch (error) {
@@ -73,7 +73,7 @@ const Dashboard = () => {
 
         const countAllCategories = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/wildSkills/category/countTotalCategories');
+                const response = await axios.get('https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/category/countTotalCategories');
                 console.log("categories count: " + response.data);
                 setCategoryCount(response.data);
             } catch (error) {
