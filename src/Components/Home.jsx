@@ -145,7 +145,7 @@ const Home = ({userId}) => {
                 const response = await api.get(`/getUserStudentRecord?id=${id}`);
                 console.log(response.data);
                 const fetchedStudent = response.data;
-                fetchedStudent.birthdate = parseDate(fetchedStudent.birthdate);
+                //fetchedStudent.birthdate = parseDate(fetchedStudent.birthdate);
                 setStudent(fetchedStudent);
                 setProfilePic("data:image/png;base64,"+fetchedStudent.avatar);
             } catch (error) {
