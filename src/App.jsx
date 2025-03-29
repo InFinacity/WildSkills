@@ -104,7 +104,7 @@ const App = () => {
                     } else {
                         updateAuthentication(true);
                         setTimeout(() => {
-                            logoutHandle();
+                            //logoutHandle();
                         }, 100);
                     }
                 } catch (error) {
@@ -141,7 +141,7 @@ const App = () => {
         navigate('/browsecategories', { state: { category } });;
     };
 
-    
+    /*
     const logoutHandle = async () => {
         localStorage.removeItem('authId');
         localStorage.removeItem('userId');
@@ -154,6 +154,7 @@ const App = () => {
     
         console.log('Logout successful');
     };
+    */
     
 
     return (
