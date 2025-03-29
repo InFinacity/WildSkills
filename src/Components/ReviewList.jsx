@@ -17,7 +17,7 @@ const ReviewList = ({ userId }) => {
 
     const fetchReviews = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/wildSkills/review/getStudentReviews/${studentId}`);
+            const response = await axios.get(`https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/review/getStudentReviews/${studentId}`);
             console.log("API response:", response.data);
             setReviews(response.data);
         } catch (error) {

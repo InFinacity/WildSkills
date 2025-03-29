@@ -36,7 +36,7 @@ export default function Profile({userId}) {
     
 
     const api = axios.create({
-        baseURL: 'http://localhost:8080/api/wildSkills/student',
+        baseURL: 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/student',
         timeout: 1000,
         headers: {
             'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ export default function Profile({userId}) {
 
             const averageRating = async ({userId}) => {
                 try {
-                    const ave = await axios.get(`http://localhost:8080/api/wildSkills/review/getAve/${userId}`);
+                    const ave = await axios.get(`https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/review/getAve/${userId}`);
                     console.log(ave);
                 } catch (error) {
                     console.error('Error:', error);

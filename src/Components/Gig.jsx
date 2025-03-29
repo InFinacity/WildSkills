@@ -22,7 +22,7 @@ const Gig = ({userId}) => {
     const [authId, setAuthId] = useState();
 
     const api = axios.create({
-        baseURL: 'http://localhost:8080/api/wildSkills/student',
+        baseURL: 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/student',
         timeout: 1000,
         headers: {
             'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ const Gig = ({userId}) => {
         const fetchCategoryName = async () => {
             if (categoryId && !category) {
                 try {
-                    const response = await axios.get(`http://localhost:8080/api/wildSkills/category/getCategory/${categoryId}`);
+                    const response = await axios.get(`https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/category/getCategory/${categoryId}`);
                     setCategoryName(response.data.name);
                 } catch (error) {
                     console.error('Error fetching category name:', error);
@@ -84,7 +84,7 @@ const Gig = ({userId}) => {
             isActive: editIsActive,
         };
         try {
-            await axios.put(`http://localhost:8080/api/wildSkills/skilloffering/student/${userId}/putSkillOfferingDetails/client/${skillOfferingId}`, skillOfferingData);
+            await axios.put(`https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/skilloffering/student/${userId}/putSkillOfferingDetails/client/${skillOfferingId}`, skillOfferingData);
             setIsEditing(false);
         } catch (error) {
             console.error('Error saving skill offering details', error);

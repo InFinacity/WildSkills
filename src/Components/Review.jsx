@@ -33,7 +33,7 @@ const Review = () => {
         }
 
         try {
-            const response = await axios.post(`http://localhost:8080/api/wildSkills/review/reviewStudent/${userId}/${exchangeId}`, {
+            const response = await axios.post(`https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/review/reviewStudent/${userId}/${exchangeId}`, {
                 rating: rating,
                 comment: comment,
             });

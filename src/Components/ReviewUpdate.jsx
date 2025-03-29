@@ -11,7 +11,7 @@ const UpdateReview = () => {
     useEffect(() => {
         const fetchReview = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/api/wildSkills/review/getReviewById/${id}`);
+                const response = await axios.get(`https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/review/getReviewById/${id}`);
                 setReview(response.data);
             } catch (error) {
                 console.error("Error fetching review:", error);
@@ -23,7 +23,7 @@ const UpdateReview = () => {
 
     const handleUpdate = async () => {
         try {
-            await axios.put(`http://localhost:8080/api/wildSkills/review/putReviewDetails/${id}`, review);
+            await axios.put(`https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/review/putReviewDetails/${id}`, review);
             alert('Review updated successfully');
             navigate(-1);
         } catch (error) {

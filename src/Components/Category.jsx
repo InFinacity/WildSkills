@@ -14,7 +14,7 @@ const Category = ({ onCategoriesChange }) => {
 
     const fetchCategories = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/wildSkills/category/getAllCategory');
+            const response = await axios.get('https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/category/getAllCategory');
             setCategories(response.data);
             if (onCategoriesChange) {
                 onCategoriesChange(response.data);
@@ -33,7 +33,7 @@ const Category = ({ onCategoriesChange }) => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:8080/api/wildSkills/category/deleteCourseDetails/${id}`);
+            await axios.delete(`https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/category/deleteCourseDetails/${id}`);
             fetchCategories();
         } catch (error) {
             console.error('Error deleting category:', error);
@@ -45,7 +45,7 @@ const Category = ({ onCategoriesChange }) => {
 
         if (editingCategoryId) {
             try {
-                await axios.put(`http://localhost:8080/api/wildSkills/category/putCategoryDetails?id=${editingCategoryId}`, {
+                await axios.put(`https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/category/putCategoryDetails?id=${editingCategoryId}`, {
                     name: newCategoryName,
                 });
                 setEditingCategoryId(null);
@@ -54,7 +54,7 @@ const Category = ({ onCategoriesChange }) => {
             }
         } else {
             try {
-                await axios.post('http://localhost:8080/api/wildSkills/category/postCategoryRecord', {
+                await axios.post('https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/category/postCategoryRecord', {
                     name: newCategoryName,
                 });
             } catch (error) {

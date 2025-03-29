@@ -16,7 +16,7 @@ const GigHome = ({userId}) => {
     const navigate = useNavigate();
 
     const api = axios.create({
-        baseURL: `http://localhost:8080/api/wildSkills/skillExchange/student/${userId}`,
+        baseURL: `https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/skillExchange/student/${userId}`,
         timeout: 1000,
         headers: {
             'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ const GigHome = ({userId}) => {
 
     const fetchReviews = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/wildSkills/review/getStudentReviews/1');
+            const response = await axios.get('https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/review/getStudentReviews/1');
             console.log("API response:", response.data);
             setReviews(response.data);
         } catch (error) {
@@ -53,7 +53,7 @@ const GigHome = ({userId}) => {
             const fetchAverageRating = async () => {
                 try {
                     const response = await axios.get(
-                        `http://localhost:8080/api/wildSkills/review/getAve/${gigData.studentId}`
+                        `https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/review/getAve/${gigData.studentId}`
                     );
                     setAverageRating(response.data || 0);
                 } catch (error) {
@@ -68,14 +68,14 @@ const GigHome = ({userId}) => {
         const fetchGigData = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:8080/api/wildSkills/skilloffering/getSkillOfferingById/${id}`
+                    `https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/skilloffering/getSkillOfferingById/${id}`
                 );
                 const data = response.data;
                 setGigData(data);
 
                 if (data.studentId) {
                     const studentResponse = await axios.get(
-                        `http://localhost:8080/api/wildSkills/student/getUserStudentRecord?id=${data.studentId}`
+                        `https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/student/getUserStudentRecord?id=${data.studentId}`
                     );
                     setStudentName(studentResponse.data.name);
                 }

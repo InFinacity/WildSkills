@@ -79,14 +79,14 @@ const Home = ({userId}) => {
     const fetchSkillOfferings = async () => {
         if (isAll){
             try {
-                const response = await axios.get('http://localhost:8080/api/wildSkills/skilloffering/getAllSkillOfferingRecord');
+                const response = await axios.get('https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/skilloffering/getAllSkillOfferingRecord');
                 setSkillOfferings(response.data);
             } catch (error) {
                 console.error('Error fetching skill offerings:', error);
             }
         }else{
             try {
-                const response = await axios.get('http://localhost:8080/api/wildSkills/skilloffering/searchByCategory',{
+                const response = await axios.get('https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/skilloffering/searchByCategory',{
                     params:{query},
                     headers: {
                         'Content-Type': 'application/json', // Setting the Content-Type header
@@ -103,7 +103,7 @@ const Home = ({userId}) => {
 
     const fetchCategories = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/wildSkills/category/getAllCategory');
+            const response = await axios.get('https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/category/getAllCategory');
             setCategories(response.data);
         } catch (error) {
             console.error('Error fetching categories:', error);
@@ -113,7 +113,7 @@ const Home = ({userId}) => {
     //---------------------------
 
     const api = axios.create({
-        baseURL: 'http://localhost:8080/api/wildSkills/student',
+        baseURL: 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/student',
         timeout: 1000,
         headers: {
             'Content-Type': 'application/json',
@@ -128,7 +128,7 @@ const Home = ({userId}) => {
 
     const fetchStudents = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/wildSkills/student/getStudentRecord');
+            const response = await axios.get('https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/student/getStudentRecord');
             console.log("API response:", response.data);
             setStudents(response.data);
         } catch (error) {

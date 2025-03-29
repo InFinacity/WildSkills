@@ -31,7 +31,7 @@ const SkillOffering = ({ userId }) => {
     }, []);
 
     const api = axios.create({
-        baseURL: 'http://localhost:8080/api/wildSkills/student',
+        baseURL: 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/student',
         timeout: 1000,
         headers: {
             'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const SkillOffering = ({ userId }) => {
     const fetchSkillOfferings = async () => {
         try {
             const response = await axios.get(
-                `http://localhost:8080/api/wildSkills/skilloffering/student/${userId}/getAllSkillOfferingRecord/client`
+                `https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/skilloffering/student/${userId}/getAllSkillOfferingRecord/client`
             );
             setSkillOfferings(response.data);
             setLoading(false);
@@ -74,7 +74,7 @@ const SkillOffering = ({ userId }) => {
     const fetchCategories = async () => {
         try {
             const response = await axios.get(
-                'http://localhost:8080/api/wildSkills/category/getAllCategory'
+                'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/category/getAllCategory'
             );
             setCategories(response.data);
         } catch (error) {
@@ -91,7 +91,7 @@ const SkillOffering = ({ userId }) => {
 
     const handleDeleteSelected = async () => {
         try {
-            await Promise.all(selectedIds.map(id => axios.delete(`http://localhost:8080/api/wildSkills/skilloffering/student/${userId}/deleteSkillOfferingDetails/client/${id}`)));
+            await Promise.all(selectedIds.map(id => axios.delete(`https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/skilloffering/student/${userId}/deleteSkillOfferingDetails/client/${id}`)));
             fetchSkillOfferings();
             setSelectedIds([]);
             setShowCheckboxes(false);
@@ -118,7 +118,7 @@ const SkillOffering = ({ userId }) => {
         
         try {
             let response;
-            response = await axios.post(`http://localhost:8080/api/wildSkills/skilloffering/student/${userId}/postSkillOfferingRecord`, skillOfferingData);
+            response = await axios.post(`https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/skilloffering/student/${userId}/postSkillOfferingRecord`, skillOfferingData);
             
 
             const savedOffering = response.data;
@@ -170,7 +170,7 @@ const SkillOffering = ({ userId }) => {
       }
 
     const getExchange = () => {
-        axios.get(`http://localhost:8080/api/wildSkills/skillExchange/exchange/${id}`)
+        axios.get(`https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/skillExchange/exchange/${id}`)
     }
 return (
     <div style={{ textAlign: 'center', color: 'black', background: '#222222', minHeight: '85vh', padding: '20px', minWidth: '97.8vw' }}>
