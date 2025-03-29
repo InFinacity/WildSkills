@@ -23,6 +23,29 @@ export default function Login({ setUserId, setAuthId}) {
     const [dialogTitle, setDialogTitle] = useState("");
     const [dialogMessage, setDialogMessage] = useState("");
 
+    const isDevelopment = window.location.hostname === 'localhost';
+    const baseURL = isDevelopment ? 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/student' : 'http://localhost:8080/api/wildSkills/student';
+    const authBaseURL = isDevelopment ? 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/authentication' : 'http://localhost:8080/api/wildSkills/authentication';
+
+    const api = axios.create({
+        baseURL: baseURL,
+        timeout: 1000,
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+    });
+
+    const apiAuth = axios.create({
+        baseURL: authBaseURL,
+        timeout: 1000,
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+    });
+
+    /*
     const api = axios.create({
         baseURL: "http://localhost:8080/api/wildSkills/student",
         timeout: 1000,
@@ -41,6 +64,7 @@ export default function Login({ setUserId, setAuthId}) {
         },
     });
 
+    */
     const handleLogin = async () => {
         try {
             const response = await api.post("/login", {

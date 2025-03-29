@@ -34,6 +34,7 @@ export default defineConfig({
       Buffer: 'buffer',
     },
   },
+  /*
   server: {
     proxy: {
       '/api': {
@@ -42,5 +43,5 @@ export default defineConfig({
         secure: false
       }
     }
-  }
+  }*/
 })
