@@ -7,7 +7,7 @@ import rollupNodePolyFill from 'rollup-plugin-node-polyfills';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/WildSkills",
+  base: "/WildSkills/",
   optimizeDeps: {
     esbuildOptions: {
       define: {
@@ -34,4 +34,13 @@ export default defineConfig({
       Buffer: 'buffer',
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        secure: false
+      }
+    }
+  }
 })

@@ -23,8 +23,13 @@ export default function Login({ setUserId, setAuthId}) {
     const [dialogTitle, setDialogTitle] = useState("");
     const [dialogMessage, setDialogMessage] = useState("");
 
+    const API_BASE_URL = import.meta.env.MODE === "development"
+    ? "http://localhost:8080/api/wildSkills"
+    : "https://random-id.ngrok.io/api/wildSkills";
+
     const api = axios.create({
-        baseURL: "http://localhost:8080/api/wildSkills/student",
+        //baseURL: "http://localhost:8080/api/wildSkills/student",
+        baseURL: `${API_BASE_URL}/student`,
         timeout: 1000,
         headers: {
             "Content-Type": "application/json",
@@ -33,7 +38,8 @@ export default function Login({ setUserId, setAuthId}) {
     });
 
     const apiAuth = axios.create({
-        baseURL: "http://localhost:8080/api/wildSkills/authentication",
+        //baseURL: "http://localhost:8080/api/wildSkills/authentication",
+        baseURL: `${API_BASE_URL}/authentication`,
         timeout: 1000,
         headers: {
             "Content-Type": "application/json",

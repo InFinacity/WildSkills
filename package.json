@@ -1,5 +1,5 @@
 {
-  "name": "wildskillsfrontend",
+  "name": "wildskills",
   "homepage": "https://infinacity.github.io/WildSkills/",
   "private": true,
   "version": "0.0.0",
@@ -32,7 +32,7 @@
     "sockjs-client": "^1.6.1",
     "stream-browserify": "^3.0.0",
     "util": "^0.12.5",
-    "wildskillsfrontend": "file:"
+    "wildskills": "file:"
   },
   "devDependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
