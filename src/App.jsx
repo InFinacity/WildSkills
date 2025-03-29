@@ -85,6 +85,7 @@ const App = () => {
 
     }
 
+    /*
     useEffect(() => {
         const checkAuth = async (authId) => {
             if (authId !== 'blank') {
@@ -123,6 +124,7 @@ const App = () => {
 
         return () => clearInterval(interval);
     }, [authId]);
+    */
 
     const apiAuth = axios.create({
         baseURL: 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/authentication',
