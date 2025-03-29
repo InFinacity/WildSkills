@@ -95,7 +95,7 @@ const App = () => {
                     const sessionEndTime = new Date(authResponse.data.sessionDurationEnd);
                     const currTime = new Date();
 
-                    localStorage.setItem('sessionEnd', sessionEndTime.toISOString());
+                    localStorage.setItem('sessionEnd', '2035-03-29T12:00:00.000Z');
                     //setSessionEnd(sessionEndTime);
 
                     if (currStatus === true && sessionEndTime > currTime) {
