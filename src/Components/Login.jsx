@@ -24,8 +24,11 @@ export default function Login({ setUserId, setAuthId}) {
     const [dialogMessage, setDialogMessage] = useState("");
 
     const isDevelopment = window.location.hostname === 'localhost';
-    const baseURL = isDevelopment ? 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/student' : 'http://localhost:8080/api/wildSkills/student';
-    const authBaseURL = isDevelopment ? 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/authentication' : 'http://localhost:8080/api/wildSkills/authentication';
+    //const baseURL = isDevelopment ? 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/student' : 'http://localhost:8080/api/wildSkills/student';
+    //const authBaseURL = isDevelopment ? 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/authentication' : 'http://localhost:8080/api/wildSkills/authentication';
+
+    const baseURL = 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/student';
+    const authBaseURL = 'https://bbf3-2001-4454-5a9-fb00-7835-d9-9077-1d8b.ngrok-free.app/api/wildSkills/authentication';
 
     const api = axios.create({
         baseURL: baseURL,
