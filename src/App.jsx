@@ -141,7 +141,7 @@ const App = () => {
         navigate('/browsecategories', { state: { category } });;
     };
 
-    /*
+    
     const logoutHandle = async () => {
         localStorage.removeItem('authId');
         localStorage.removeItem('userId');
@@ -154,7 +154,7 @@ const App = () => {
     
         console.log('Logout successful');
     };
-    */
+    
 
     return (
         <>
